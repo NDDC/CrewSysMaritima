@@ -1,0 +1,393 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MasterPage.master.vb" Inherits="CrewSys.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>CrewSys™ |</title>
+
+
+    <!--[if lt IE 10]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+          <![endif]-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Maritima De Manila Management Systems, Inc. is a small-sized company engaged in crewing business with a history of more than ten years in the international market. " />
+    <meta name="keywords" content="maritima, maritima de manila, systems" />
+    <meta name="author" content="ayic08" />
+
+    <link rel="shortcut icon" href="Logo/favicon.ico" type="image/x-icon" />
+
+    <%--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet" />--%>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="assets/pages/chart/radial/css/radial.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="assets/pages/foo-table/css/footable.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/pages/foo-table/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/pages/foo-table/css/footable.standalone.min.css" />
+
+    
+    <link rel="stylesheet" href="css/GridPaging.css" />
+    
+    <link href="css/bootstrap-select.css" rel="stylesheet" />
+    <link href="css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/bootstrap-toggle.min.css" rel="stylesheet" />
+
+
+    <script src="bower_components/jquery/js/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script src="bower_components/popper.js/js/popper.min.js"></script>
+    <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <script src="bower_components/modernizr/js/modernizr.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script src="assets/js/pcoded.min.js"></script>
+    <script src="assets/js/vertical/vertical-layout.min.js"></script>
+
+    <script src="assets/pages/dashboard/custom-dashboard.js"></script>
+    <script src="assets/js/script.js"></script>
+        
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/pages/foo-table/js/foo-table-custom.js"></script>
+        
+
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+
+    
+    <script src="js/bootstrap-toggle.min.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+
+
+            <div id="pcoded" class="pcoded">
+                <div class="pcoded-overlay-box"></div>
+                <div class="pcoded-container navbar-wrapper">
+                    <nav class="navbar header-navbar pcoded-header">
+                        <div class="navbar-wrapper">
+                            <div class="navbar-logo">
+                                <a class="mobile-menu" id="mobile-collapse" href="#!">
+                                    <i class="ti-menu"></i>
+                                </a>
+                                <a href="SearchCrew.aspx">
+                                    <img class="img-fluid" src="images/logo.png" alt="CrewSys™" />
+                                    CrewSys™
+                                </a>
+                                <a class="mobile-options">
+                                    <i class="ti-more"></i>
+                                </a>
+                            </div>
+                            <div class="navbar-container container-fluid">
+                                <ul class="nav-left">
+                                    <li>
+                                        <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                    </li>
+                                    <li>
+                                        <a href="#!" onclick="javascript:toggleFullScreen()">
+                                            <i class="ti-fullscreen"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav-right">
+                                    <li class="user-profile header-notification">
+                                        <a href="#!">
+                                            <asp:Image ID="ProfileImage" runat="server" ImageUrl="PhotoPic/Users.png" CssClass="img-radius" alt="User-Profile-Image" />
+                                            <span>
+                                                <asp:Label ID="lblProfileName2" runat="server" Text=""></asp:Label></span>
+                                            <i class="ti-angle-down"></i>
+                                        </a>
+                                        <ul class="show-notification profile-notification">
+                                            <li>
+                                                <asp:LinkButton ID="lblProfile2" runat="server">
+                                                <i class="ti-user"></i>Profile
+                                                </asp:LinkButton>
+                                            </li>
+                                            <li>
+                                                <asp:LinkButton ID="lblLogout1" runat="server">
+                                                <i class="ti-layout-sidebar-left"></i>Logout
+                                                </asp:LinkButton>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="pcoded-main-container">
+                        <div class="pcoded-wrapper">
+                            <nav class="pcoded-navbar">
+                                <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                                <div class="pcoded-inner-navbar main-menu">
+
+                                    <div class="pcoded-navigation-label">Dashboard</div>
+                                    <ul class="pcoded-item pcoded-left-item">
+                                        <li id="Rec" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon" runat="server" id="Recs"><i class="ti-pencil-alt"></i><b>RT</b></span>
+                                                <span class="pcoded-mtext" runat="server" id="Recs2">Recruitment</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="RecAF" runat="server" class=" ">
+                                                    <a href="CrewApplication.aspx" title="Application Form">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Application Form</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li id="Alert" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon"><i class="ti-check-box"></i><b>AP</b></span>
+                                                <span class="pcoded-mtext">Alerts & Planning</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="AlertAl" runat="server" class=" ">
+                                                    <a href="Alerts.aspx" title="Alerts">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Alerts</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="AlertCP" runat="server" class=" ">
+                                                    <a href="CrewPlan.aspx" title="Crew Planning">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="AlertCPs">Crew Planning</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li id="Home" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon"><i class="ti-home"></i><b>HE</b></span>
+                                                <span class="pcoded-mtext">Home</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="HomeCr" runat="server" class=" ">
+                                                    <a href="SearchCrew.aspx" title="Crew List">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Crew List</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="HomeVe" runat="server" class=" ">
+                                                    <a href="VesselCrew.aspx" title="Vessel Crew List">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Vessel Crew List</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <div class="pcoded-navigation-label">Settings</div>
+                                    <ul class="pcoded-item pcoded-left-item">
+                                        <li id="Acc" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon" runat="server" id="Accs"><i class="ti-user"></i><b>AS</b></span>
+                                                <span class="pcoded-mtext" runat="server" id="Accs2">Accounts</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="AccUM" runat="server" class=" ">
+                                                    <a href="Users.aspx" title="Users Management">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="AccUMs">Users Management</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="AccMP" runat="server" class=" ">
+                                                    <a href="Principals.aspx" title="Manage Principals">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="AccMPs">Manage Principals</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li id="VW" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon"><i class="ti-anchor"></i><i class="ti-money"></i><b>VW</b></span>
+                                                <span class="pcoded-mtext">Vessels & Wages</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="VWMV" runat="server" class=" ">
+                                                    <a href="Vessels.aspx" title="Manage Vessels">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Manage Vessels</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="VWMW" runat="server" class=" ">
+                                                    <a href="Wages.aspx" title="Manage Wages">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Manage Wages</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li id="Pay" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon" runat="server" id="Pay1"><i class="ti-money"></i><b>RS</b></span>
+                                                <span class="pcoded-mtext" runat="server" id="Pay2">Payroll</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="pPay" runat="server" class=" ">
+                                                    <a href="Payroll.aspx" title="Manage Crew Payroll">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Manage Crew Payroll</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li id="Reports" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon" runat="server" id="Reports1"><i class="ti-files"></i><b>RS</b></span>
+                                                <span class="pcoded-mtext" runat="server" id="Reports2">Reports</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="ReportsR" runat="server" class=" ">
+                                                    <a href="Reports.aspx" title="Manage Reports">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext">Manage Reports</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li id="Sett" runat="server" class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon" runat="server" id="Setts"><i class="ti-settings"></i><b>ME</b></span>
+                                                <span class="pcoded-mtext" runat="server" id="Setts2">Manage</span>
+                                                <%--<span class="pcoded-mcaret"></span>--%>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li id="SettDR" runat="server" class=" ">
+                                                    <a href="Documents.aspx" title="Manage Documents">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="SettDRs">Documents</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="SettTC" runat="server" class=" ">
+                                                    <a href="TrainingCenter.aspx" title="Manage Traning Center">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="SettTCs">Traning Center</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="SettRa" runat="server" class=" ">
+                                                    <a href="Positions.aspx" title="Manage Ranks">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="SettRas">Ranks</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="SettRea" runat="server" class=" ">
+                                                    <a href="SignOffReason.aspx" title="Manage Sign Off Reason">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="SettReas">Sign Off Reason</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                                <li id="SettVC" runat="server" class=" ">
+                                                    <a href="VesselSettings.aspx" title="Manage Vessel Type & CBA">
+                                                        <%--<span class="pcoded-micon"><i class="ti-angle-right"></i></span>--%>
+                                                        <span class="pcoded-mtext" runat="server" id="SettVC1">Vessel Type & CBA</span>
+                                                        <%--<span class="pcoded-mcaret"></span>--%>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+                            </nav>
+
+
+
+                            <div class="pcoded-content">
+                                <div class="pcoded-inner-content">
+                                    <div class="main-body">
+                                        <div class="page-wrapper">
+
+
+                                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                </asp:ContentPlaceHolder>
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <footer class="bg-white b-t b-light">
+                                        <div class="">
+                                            <p class="pull-right">
+                                                &copy; <%=DateTime.Now.Year  %> - CrewSys™
+                                                <span class="lead"><i class="fa fa-anchor"></i></span>
+                                            </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </footer>
+
+
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </form>
+</body>
+</html>

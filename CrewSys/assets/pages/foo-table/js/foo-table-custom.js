@@ -1,0 +1,1 @@
+'use strict';$(document).ready(function(){$('.table').footable({"paging":{"enabled":false},"sorting":{"enabled":true}});});
