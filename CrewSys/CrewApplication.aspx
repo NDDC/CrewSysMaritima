@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage.Master" CodeBehind="CrewApplication.aspx.vb" Inherits="CrewSys.CrewApplication" %>
 
+.00
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link href="css/Form-Wizard.css" rel="stylesheet" />
@@ -56,54 +57,10 @@
         }
     </script>
 
-    <%--    <script type="text/javascript">
-       jQuery(document).ready(function () {
-
-           var ddlYear = jQuery("select[id$='ddlYear']");
-           jQuery.each(ddlYear, function () {
-               var curDdl = jQuery(this);
-               var currentTime = new Date();
-               var years = currentTime.getFullYear();
-        for (i = 2000; i <= years; i++)
-            curDdl.append(jQuery('<option>', { value: i, text: i }));
-    });
-       });
-    </script>--%>
+   
 
     <script>
-        <%--        $(function () {
-            $("#<%= txtBirthdate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '-60Y:+0',
-                dateFormat: 'dd-M-yy',
-
-                minDate: '-60Y',
-                maxDate: '-18Y',
-
-            })
-        });--%>
-
-<%--        $(function () {
-            $("#<%= txtBirthdate.ClientID%>").change(function () {
-                 jQuery(document).ready(function () {
-
-                     var ddlYear = jQuery("select[id$='ddlYear']");
-                     jQuery.each(ddlYear, function () {
-
-                         var curDdl = jQuery(this);
-                         var currentTime = new Date();
-                         var years = currentTime.getFullYear();
-                         var exstart = $("[id*=txtBirthdate]").val();
-                         var yearsget = exstart.getFullYear();
-                         for (i = yearsget; i <= years; i++)
-                             curDdl.append(jQuery('<option>', { value: i, text: i }));
-                     });
-                 });
-             });
-         });--%>
-
+    
         $(function () {
             $("#<%= txtExStartDate.ClientID%>").datepicker({
                 changeYear: true,
@@ -133,18 +90,7 @@
                 })
             });
         });
-<%--        $(function () {
-            $("#<%= txtExEndDate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '-60Y:+15',
-                dateFormat: 'dd-M-yy',
 
-                //  minDate: new Date(1960, 10 - 1, 25),
-                //  maxDate: '-18Y',
-            })
-        });--%>
         $(function () {
             $("#<%= txtIDate.ClientID%>").datepicker({
                 changeYear: true,
@@ -174,54 +120,9 @@
                 })
             });
         });
-        <%--        $(function () {
-            $("#<%= txtExdate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '-60Y:+15',
-                dateFormat: 'dd-M-yy',
-
-                //   minDate: new Date(1960, 10 - 1, 25),
-                //   maxDate: '-18Y',
-            })
-        });--%>
-        <%--       $(function () {
-            $("#<%= txtYearGrad.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: false,
-                showMonthAfterYear: false,
-                yearRange: "1970:+0",
-                dateFormat: 'yy',--%>
-
-        <%--                      $("#<%=txtYearGrad.ClientID%>").datepicker({
-                     changeYear: true,
-                     dateFormat: 'yy',
-                     showMonthAfterYear: false,
-                     yearRange: "1970:+0",--%>
-
-        //    })
-        //    $(".yearpicker").focus(function () {
-        //        $(".ui-datepicker-month").hide();
-        //    });
-        //});
+     
     </script>
-    <%--    <script>
-
-        var password = document.getElementById("<%=txtPass.ClientID%>")
-            , confirm_password = document.getElementById("<%=txtConfirmPass.ClientID%>");
-
-        function validatePassword() {
-            if (password.value != confirm_password.value) {
-                confirm_password.setCustomValidity("Passwords Don't Match");
-            } else {
-                confirm_password.setCustomValidity('');
-            }
-        }
-
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
-    </script>--%>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -508,6 +409,7 @@
 
 
                                 <div class="actionbar">
+                                     <asp:LinkButton ID="lbPrevProfile" runat="server" CssClass="btn btn-success pull-left">PREVIOUS</asp:LinkButton>
                                     <asp:LinkButton ID="lbNextSea" runat="server" CssClass="btn btn-success pull-right">NEXT</asp:LinkButton>
                                 </div>
 

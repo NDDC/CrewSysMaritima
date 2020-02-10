@@ -1,0 +1,4 @@
+﻿[*.vb]
+
+# BC42322: Runtime errors might occur when converting to or from interface type
+dotnet_diagnostic.BC42322.severity = suggestion

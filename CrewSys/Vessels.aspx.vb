@@ -235,7 +235,7 @@
             Try
                 ViewRecord(index)
 
-                GetDocs()
+                '  GetDocs()
 
                 MultiView1.ActiveViewIndex = 1
 
@@ -287,10 +287,11 @@
                 ddlYear.SelectedValue = row("YearBuilt").ToString
                 txtClassification.Text = row("Classification").ToString
                 ddlCBA.SelectedValue = row("CBA").ToString
-                txtOfficialNo.Text = row("OfficialNo").ToString
-                txtBuilder.Text = row("Builder").ToString
-                txtEngineMaker.Text = row("EngineMaker").ToString
-                txtNetTons.Text = row("NetTons").ToString
+                '
+                ' txtOfficialNo.Text = row("OfficialNo").ToString
+                ' txtBuilder.Text = row("Builder").ToString
+                '  txtEngineMaker.Text = row("EngineMaker").ToString
+                ' txtNetTons.Text = row("NetTons").ToString
 
                 If hdnVesselStat.Value = "INACTIVE" Then
                     VesselStatus.Checked = 0
@@ -368,10 +369,10 @@
             .Add("YearBuilt", ddlYear.SelectedValue)
             .Add("Classification", txtClassification.Text)
             .Add("CBA", ddlCBA.SelectedValue)
-            .Add("OfficialNo", txtOfficialNo.Text)
-            .Add("Builder", txtBuilder.text)
-            .Add("EngineMaker", txtEngineMaker.Text)
-            .Add("NetTons", txtNetTons.Text)
+            '  .Add("OfficialNo", txtOfficialNo.Text)
+            ' .Add("Builder", txtBuilder.text)
+            ' .Add("EngineMaker", txtEngineMaker.Text)
+            ' .Add("NetTons", txtNetTons.Text)
         End With
         MainClass.Library.Command.Execute(htParameters, "VesselMod")
 

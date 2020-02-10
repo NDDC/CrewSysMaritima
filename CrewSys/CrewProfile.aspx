@@ -115,11 +115,11 @@
 
 
         }
-        $(function () {
-            RefreshDDL()
-        });
+        //$(function () {
+        //    RefreshDDL()
+        //});
         function pageLoad(sender, args) {
-            RefreshDDL()
+           // RefreshDDL()
 
             $('[id*=GenderM]').bootstrapToggle({
                 on: 'FEMALE',
@@ -228,161 +228,7 @@
 
     </script>
 
-    <script>
-        //$(function () {
-        //     $('[id*=Gender]').bootstrapToggle({
-        //        on: 'FEMALE',
-        //        off: 'MALE',
-        //        onstyle: 'primary',
-        //        offstyle: 'default'
-        //    });
-        //    $('[id*=ENextKin]').bootstrapToggle({
-        //        on: 'NO',
-        //        off: 'YES',
-        //        onstyle: 'primary',
-        //        offstyle: 'default'
-        //    });
-        //    $('[id*=chkArchiveUpdate]').bootstrapToggle({
-        //        on: 'NO',
-        //        off: 'YES',
-        //        onstyle: 'primary',
-        //        offstyle: 'default'
-        //    });
-        //});
-        <%--         $(function () {
-            $("#<%= txtBirthdate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '-60Y:+0',
-                dateFormat: 'dd-M-yy',
-
-                minDate: '-60Y',
-                maxDate: '-18Y',
-
-            })
-        });
-
-        $(function () {
-            $("#<%= txtExStartDate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '1960:+0',
-                dateFormat: 'dd-M-yy',
-
-                minDate: '-60Y',
-                maxDate: '+0D',
-            })
-        });
-
-        $(function () {
-            $("#<%= txtExEndDate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '1960:+15',
-                dateFormat: 'dd-M-yy',
-
-                //  minDate: new Date(1960, 10 - 1, 25),
-                //  maxDate: '-18Y',
-            })
-        });
-        $(function () {
-            $("#<%= txtIDate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '1960:+0',
-                dateFormat: 'dd-M-yy',
-
-                minDate: '-60Y',
-                maxDate: '+0D',
-            })
-        });
-        $(function () {
-            $("#<%= txtExdate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '1960:+15',
-                dateFormat: 'dd-M-yy',
-
-                //   minDate: new Date(1960, 10 - 1, 25),
-                //   maxDate: '-18Y',
-            })
-        });
-        $(function () {
-            $("#<%= txtIDateUpdate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '1960:+0',
-                dateFormat: 'dd-M-yy',
-
-                minDate: '-60Y',
-                maxDate: '+0D',
-            })
-        });
-        $(function () {
-            $("#<%= txtExDateUpdate.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: true,
-                showMonthAfterYear: true,
-                yearRange: '1960:+15',
-                dateFormat: 'dd-M-yy',
-
-                //   minDate: new Date(1960, 10 - 1, 25),
-                //   maxDate: '-18Y',
-            })
-        });--%>
-        <%--        $(function () {
-            $("#<%= txtAllotment.ClientID%>").change(function () {
-                var count = $("#<%= txtAllotment.ClientID%>").text();
-                var TotalAlloc = $("#<%= hdnTotalAllocation.ClientID%>").val();
-                var Allot = $("#<%= txtAllotment.ClientID%>").val();
-                if (parseInt(TotalAlloc) < parseInt(Allot)) {
-                    $("#<%= lblErrorAllot.ClientID%>").show();
-                }
-                else {
-                    $("#<%= lblErrorAllot.ClientID%>").hide();
-                }
-            });
-        });--%>
-        <%--$(function () {
-            $("#<%= txtEAllotment.ClientID%>").change(function () {
-                var count = $("#<%= txtEAllotment.ClientID%>").val();
-                var TotalAlloc2 = $("#<%= hdnTotalAllocation2.ClientID%>").val();
-                var EAllot2 = $("#<%= txtEAllotment.ClientID%>").val();
-                if (parseInt(TotalAlloc2) < parseInt(EAllot2)) {
-                    $("#<%= lblErrAllotE.ClientID%>").show();
-                }
-                else {
-                    $("#<%= lblErrAllotE.ClientID%>").hide();
-                }
-            });
-        });--%>
-
-        <%--        $(function () {
-            $("#<%= txtYearGrad.ClientID%>").datepicker({
-                changeYear: true,
-                changeMonth: false,
-                showMonthAfterYear: false,
-                yearRange: "1970:+0",
-                dateFormat: 'yy',--%>
-
-        <%--                      $("#<%=txtYearGrad.ClientID%>").datepicker({
-                     changeYear: true,
-                     dateFormat: 'yy',
-                     showMonthAfterYear: false,
-                     yearRange: "1970:+0",--%>
-
-        //    })
-        //    $(".yearpicker").focus(function () {
-        //        $(".ui-datepicker-month").hide();
-        //    });
-        //});
-        </script>
+    
 
 
 </asp:Content>
@@ -540,17 +386,17 @@
                                                     </li>
                                                     <li><i class="fa fa-birthday-cake text-primary p-absolute text-center d-block f-20"></i>
                                                         Date Hired:
-                                        <asp:TextBox ID="txtDateHired" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY"></asp:TextBox>
-                                                        <ajax:CalendarExtender ID="ceDateHired" PopupButtonID="imgPopup" runat="server" TargetControlID="txtDateHired" Format="MM/dd/yyyy"></ajax:CalendarExtender>
+                                        <asp:TextBox ID="txtDateHired" runat="server" CssClass="form-control form-control-round"  TextMode="Date"></asp:TextBox>
+                                                      <%--  <ajax:CalendarExtender ID="ceDateHired" PopupButtonID="imgPopup" runat="server" TargetControlID="txtDateHired" Format="MM/dd/yyyy"></ajax:CalendarExtender>
                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender8" runat="server" Enabled="True" Mask="99/99/9999" MaskType="Date"
-                                                            InputDirection="LefttoRight" TargetControlID="txtDateHired" />
+                                                            InputDirection="LefttoRight" TargetControlID="txtDateHired" />--%>
                                                     </li>
                                                     <li><i class="fa fa-birthday-cake text-primary p-absolute text-center d-block f-20"></i>
                                                         Birthday:
-                                        <asp:TextBox ID="txtBirthdate" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY" AutoPostBack="true" OnTextChanged="txtBirthdate_TextChanged"></asp:TextBox>
-                                                        <ajax:CalendarExtender ID="ceBirthdate" PopupButtonID="imgPopup" runat="server" TargetControlID="txtBirthdate" Format="MM/dd/yyyy"></ajax:CalendarExtender>
+                                        <asp:TextBox ID="txtBirthdate" runat="server" CssClass="form-control form-control-round" placeholder="DD/MM/YYYY" TextMode="Date"></asp:TextBox>
+                                                       <%-- <ajax:CalendarExtender ID="ceBirthdate" PopupButtonID="imgPopup" runat="server" TargetControlID="txtBirthdate" Format="MM/dd/yyyy"></ajax:CalendarExtender>
                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender7" runat="server" Enabled="True" Mask="99/99/9999" MaskType="Date"
-                                                            InputDirection="LefttoRight" TargetControlID="txtBirthdate" />
+                                                            InputDirection="LefttoRight" TargetControlID="txtBirthdate" />--%>
                                                     </li>
                                                     <li><i class="fa fa-map-marker text-primary p-absolute text-center d-block f-20"></i>
                                                         Birth Place:
@@ -719,31 +565,31 @@
                                                     </li>
                                                     <li><i class="fa fa-calendar text-primary p-absolute text-center d-block f-20"></i>
                                                         Sign On:
-                                                 <asp:TextBox ID="txtSignOn" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY" AutoPostBack="true" OnTextChanged="txtSignOn_TextChanged"></asp:TextBox>
-                                                        <ajax:CalendarExtender ID="ceSignOn" PopupButtonID="imgPopup" runat="server" TargetControlID="txtSignOn" Format="MM/dd/yyyy"></ajax:CalendarExtender>
-                                                        <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender9" runat="server" Enabled="True" Mask="99/99/9999" MaskType="Date"
-                                                            InputDirection="LefttoRight" TargetControlID="txtSignOn" />
+                                                 <asp:TextBox ID="txtSignOn" runat="server" CssClass="form-control form-control-round" placeholder="DD/MM/YYYY"   TextMode="Date" ></asp:TextBox>
+                                                    <%--    <ajax:CalendarExtender ID="ceSignOn" PopupButtonID="imgPopup" runat="server" TargetControlID="txtSignOn" Format="dd/MM/yyyy"></ajax:CalendarExtender>
+                                                        <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender9" runat="server" Enabled="True" Mask="31/12/9999" MaskType="Date"
+                                                            InputDirection="LefttoRight" TargetControlID="txtSignOn" />--%>
                                                     </li>
                                                     <li><i class="fa fa-calendar text-primary p-absolute text-center d-block f-20"></i>
                                                         Sign Off:
-                                                 <asp:TextBox ID="txtSignOff" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY"></asp:TextBox>
-                                                        <ajax:CalendarExtender ID="ceSignOff" PopupButtonID="imgPopup" runat="server" TargetControlID="txtSignOff" Format="MM/dd/yyyy"></ajax:CalendarExtender>
+                                                 <asp:TextBox ID="txtSignOff" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY" TextMode="Date"></asp:TextBox>
+                                                     <%--   <ajax:CalendarExtender ID="ceSignOff" PopupButtonID="imgPopup" runat="server" TargetControlID="txtSignOff" Format="MM/dd/yyyy"></ajax:CalendarExtender>
                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender10" runat="server" Enabled="True" Mask="99/99/9999" MaskType="Date"
-                                                            InputDirection="LefttoRight" TargetControlID="txtSignOff" />
+                                                            InputDirection="LefttoRight" TargetControlID="txtSignOff" />--%>
                                                     </li>
                                                     <li><i class="fa fa-calendar text-primary p-absolute text-center d-block f-20"></i>
                                                         Arrival:
-                                                 <asp:TextBox ID="txtArrival" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY" AutoPostBack="true" OnTextChanged="txtArrival_TextChanged"></asp:TextBox>
-                                                        <ajax:CalendarExtender ID="ceArrival" PopupButtonID="imgPopup" runat="server" TargetControlID="txtArrival" Format="MM/dd/yyyy"></ajax:CalendarExtender>
+                                                 <asp:TextBox ID="txtArrival" runat="server" CssClass="form-control form-control-round"  TextMode="Date"></asp:TextBox>
+                                                      <%--  <ajax:CalendarExtender ID="ceArrival" PopupButtonID="imgPopup" runat="server" TargetControlID="txtArrival" Format="MM/dd/yyyy"></ajax:CalendarExtender>
                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender11" runat="server" Enabled="True" Mask="99/99/9999" MaskType="Date"
-                                                            InputDirection="LefttoRight" TargetControlID="txtArrival" />
+                                                            InputDirection="LefttoRight" TargetControlID="txtArrival" />--%>
                                                     </li>
                                                     <li><i class="fa fa-calendar text-primary p-absolute text-center d-block f-20"></i>
                                                         Report:
-                                                 <asp:TextBox ID="txtReport" runat="server" CssClass="form-control form-control-round" placeholder="MM/DD/YYYY"></asp:TextBox>
-                                                        <ajax:CalendarExtender ID="ceReport" PopupButtonID="imgPopup" runat="server" TargetControlID="txtReport" Format="MM/dd/yyyy"></ajax:CalendarExtender>
+                                                 <asp:TextBox ID="txtReport" runat="server" CssClass="form-control form-control-round" TextMode="Date"></asp:TextBox>
+                                                      <%--  <ajax:CalendarExtender ID="ceReport" PopupButtonID="imgPopup" runat="server" TargetControlID="txtReport" Format="MM/dd/yyyy"></ajax:CalendarExtender>
                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender12" runat="server" Enabled="True" Mask="99/99/9999" MaskType="Date"
-                                                            InputDirection="LefttoRight" TargetControlID="txtReport" />
+                                                            InputDirection="LefttoRight" TargetControlID="txtReport" />--%>
                                                     </li>
                                                     <li><i class="fa fa-calendar text-primary p-absolute text-center d-block f-20"></i>
                                                         Availability:
@@ -868,9 +714,9 @@
                                                                 <li>Gender:
                                                         <asp:Label ID="lblIsmale" runat="server" Font-Bold="true"></asp:Label>
                                                                 </li>
-                                                                <li>Address 2:
+                                                              <%--  <li>Address 2:
                                                         <asp:Label ID="lblSAddress" runat="server" Font-Bold="true"></asp:Label>
-                                                                </li>
+                                                                </li>--%>
                                                                 <li>SSS Number:
                                                         <asp:Label ID="lblSSS" runat="server" Font-Bold="true"></asp:Label>
                                                                 </li>
@@ -939,10 +785,10 @@
                                                                 <asp:HiddenField ID="hdnIsMale" runat="server" />
                                                             </div>
                                                                 </li>
-                                                                <li>Address 2:
+                                                               <%-- <li>Address 2:
                                                             <div class="form-group row">
                                                                 <asp:TextBox ID="txtSAddress" runat="server" CssClass="form-control form-control-round" placeholder="Secondary Address" TextMode="MultiLine"></asp:TextBox>
-                                                            </div>
+                                                            </div>--%>
                                                                 </li>
                                                                 <li>SSS Number:
                                                             <div class="form-group row">
@@ -1503,10 +1349,19 @@
                                                 <asp:ListItem Text="BERNIE DELA CRUZ" Value="BERNIE DELA CRUZ"></asp:ListItem>
                                                 <asp:ListItem Text="ALVIN A. VILLAFUERTE" Value="ALVIN A. VILLAFUERTE"></asp:ListItem>
                                             </asp:DropDownList>--%>
+                                     <div class="form-group row">
+                                      <label class="col-sm-2 col-form-label">Signatory</label>
+
+                                     
+                                     <asp:DropDownList ID="ddlSignatory" runat="server" CssClass="form-control selectpicker">
+                                               
+                                            </asp:DropDownList>
+                                         </div>
                                     <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                                         <ContentTemplate>
                                             <asp:LinkButton ID="lbContract" runat="server" CssClass="btn btn-primary"><i class="fa fa-download"></i> Generate Contract</asp:LinkButton>
-                                        </ContentTemplate>
+                                       
+                                            </ContentTemplate>
                                     </asp:UpdatePanel>
                                 </div>
 
@@ -2114,7 +1969,7 @@
                                     <asp:DropDownList ID="ddlRank2" runat="server" required="required" CssClass="form-control form-control-round selectpicker" placeholder="Select Rank" data-live-search="true"></asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                         <%--   <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Joining Port</label>
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="txtJoiningPort" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Joining Port"></asp:TextBox>
@@ -2125,7 +1980,7 @@
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="txtEmbarkingPort" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Embarking Port"></asp:TextBox>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Vessel Name</label>
                                 <div class="col-sm-10">
@@ -2223,7 +2078,7 @@
                                     <asp:DropDownList ID="ddlRank3" runat="server" required="required" CssClass="form-control form-control-round selectpicker" placeholder="Select Rank" data-live-search="true"></asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                          <%--  <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Joining Port</label>
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="txtJoiningPortUp" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Joining Port"></asp:TextBox>
@@ -2234,7 +2089,7 @@
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="txtEmbarkingPortUp" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Embarking Port"></asp:TextBox>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Vessel Name</label>
                                 <div class="col-sm-10">

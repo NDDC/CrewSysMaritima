@@ -32,7 +32,7 @@
     Private Sub GridBind()
 
         htParameters.Add("Mode", 1)
-        htParameters.Add("TypeCBA", txtSearch.Text)
+        htParameters.Add("Desc", txtSearch.Text)
 
         gvTC.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "TCSel")
         gvTC.DataBind()

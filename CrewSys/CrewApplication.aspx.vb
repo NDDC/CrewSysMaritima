@@ -451,6 +451,15 @@ Public Class CrewApplication
         Step4.Attributes.Add("class", "nav-item")
 
     End Sub
+    Private Sub lbPrevProfile_Click(sender As Object, e As EventArgs) Handles lbPrevProfile.Click
+
+        mvApplicants.SetActiveView(vProfile)
+        Step1.Attributes.Add("class", "nav-item active")
+        Step2.Attributes.Add("class", "nav-item")
+        Step3.Attributes.Add("class", "nav-item")
+        Step4.Attributes.Add("class", "nav-item")
+
+    End Sub
 
     Private Sub lbNextDocs_Click(sender As Object, e As EventArgs) Handles lbNextDocs.Click
 

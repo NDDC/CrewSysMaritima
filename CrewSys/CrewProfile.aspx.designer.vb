@@ -320,24 +320,6 @@ Partial Public Class CrewProfile
     Protected WithEvents txtDateHired As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''ceDateHired control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ceDateHired As Global.AjaxControlToolkit.CalendarExtender
-    
-    '''<summary>
-    '''MaskedEditExtender8 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MaskedEditExtender8 As Global.AjaxControlToolkit.MaskedEditExtender
-    
-    '''<summary>
     '''txtBirthdate control.
     '''</summary>
     '''<remarks>
@@ -345,24 +327,6 @@ Partial Public Class CrewProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtBirthdate As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''ceBirthdate control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ceBirthdate As Global.AjaxControlToolkit.CalendarExtender
-    
-    '''<summary>
-    '''MaskedEditExtender7 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MaskedEditExtender7 As Global.AjaxControlToolkit.MaskedEditExtender
     
     '''<summary>
     '''txtBirthplace control.
@@ -644,24 +608,6 @@ Partial Public Class CrewProfile
     Protected WithEvents txtSignOn As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''ceSignOn control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ceSignOn As Global.AjaxControlToolkit.CalendarExtender
-    
-    '''<summary>
-    '''MaskedEditExtender9 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MaskedEditExtender9 As Global.AjaxControlToolkit.MaskedEditExtender
-    
-    '''<summary>
     '''txtSignOff control.
     '''</summary>
     '''<remarks>
@@ -669,24 +615,6 @@ Partial Public Class CrewProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtSignOff As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''ceSignOff control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ceSignOff As Global.AjaxControlToolkit.CalendarExtender
-    
-    '''<summary>
-    '''MaskedEditExtender10 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MaskedEditExtender10 As Global.AjaxControlToolkit.MaskedEditExtender
     
     '''<summary>
     '''txtArrival control.
@@ -698,24 +626,6 @@ Partial Public Class CrewProfile
     Protected WithEvents txtArrival As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''ceArrival control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ceArrival As Global.AjaxControlToolkit.CalendarExtender
-    
-    '''<summary>
-    '''MaskedEditExtender11 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MaskedEditExtender11 As Global.AjaxControlToolkit.MaskedEditExtender
-    
-    '''<summary>
     '''txtReport control.
     '''</summary>
     '''<remarks>
@@ -723,24 +633,6 @@ Partial Public Class CrewProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtReport As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''ceReport control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ceReport As Global.AjaxControlToolkit.CalendarExtender
-    
-    '''<summary>
-    '''MaskedEditExtender12 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents MaskedEditExtender12 As Global.AjaxControlToolkit.MaskedEditExtender
     
     '''<summary>
     '''ddlAvail control.
@@ -950,15 +842,6 @@ Partial Public Class CrewProfile
     Protected WithEvents lblIsmale As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''lblSAddress control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblSAddress As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
     '''lblSSS control.
     '''</summary>
     '''<remarks>
@@ -1092,15 +975,6 @@ Partial Public Class CrewProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hdnIsMale As Global.System.Web.UI.WebControls.HiddenField
-    
-    '''<summary>
-    '''txtSAddress control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtSAddress As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''txtSSS control.
@@ -1452,6 +1326,15 @@ Partial Public Class CrewProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gvPaySlip As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''ddlSignatory control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlSignatory As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''UpdatePanel3 control.
@@ -2354,24 +2237,6 @@ Partial Public Class CrewProfile
     Protected WithEvents ddlRank2 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''txtJoiningPort control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtJoiningPort As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''txtEmbarkingPort control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtEmbarkingPort As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''ddlVesselSea control.
     '''</summary>
     '''<remarks>
@@ -2514,24 +2379,6 @@ Partial Public Class CrewProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlRank3 As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''txtJoiningPortUp control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtJoiningPortUp As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''txtEmbarkingPortUp control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtEmbarkingPortUp As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''ddlVesselSeaUp control.

@@ -80,7 +80,7 @@ Public Class CrewProfile
         If Not Page.IsPostBack Then
 
             LoadDefaults()
-            PopulateCalendar()
+            'PopulateCalendar()
 
             If Session("Access") = "P" Then
                 lbJoining.Visible = False
@@ -358,68 +358,68 @@ Public Class CrewProfile
 
     End Sub
 
-    Private Sub PopulateCalendar()
+    'Private Sub PopulateCalendar()
 
-        ceBirthdate.StartDate = DateTime.Now.AddYears(-60)
-        ceBirthdate.EndDate = DateTime.Now.AddYears(-18)
+    '    ceBirthdate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceBirthdate.EndDate = DateTime.Now.AddYears(-18)
 
-        ceExStartDate.StartDate = DateTime.Now.AddYears(-60)
-        ceExStartDate.EndDate = DateTime.Now
+    '    ceExStartDate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceExStartDate.EndDate = DateTime.Now
 
-        ceExEndDate.StartDate = DateTime.Now.AddYears(-60)
-        ceExEndDate.EndDate = DateTime.Now.AddYears(+15)
+    '    ceExEndDate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceExEndDate.EndDate = DateTime.Now.AddYears(+15)
 
-        ceIDate.StartDate = DateTime.Now.AddYears(-60)
-        ceIDate.EndDate = DateTime.Now
+    '    ceIDate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceIDate.EndDate = DateTime.Now
 
-        ceExdate.StartDate = DateTime.Now.AddYears(-60)
-        ceExdate.EndDate = DateTime.Now.AddYears(+15)
+    '    ceExdate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceExdate.EndDate = DateTime.Now.AddYears(+15)
 
-        ceIDateUpdate.StartDate = DateTime.Now.AddYears(-60)
-        ceIDateUpdate.EndDate = DateTime.Now
+    '    ceIDateUpdate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceIDateUpdate.EndDate = DateTime.Now
 
-        ceExDateUpdate.StartDate = DateTime.Now.AddYears(-60)
-        ceExDateUpdate.EndDate = DateTime.Now.AddYears(+15)
+    '    ceExDateUpdate.StartDate = DateTime.Now.AddYears(-60)
+    '    ceExDateUpdate.EndDate = DateTime.Now.AddYears(+15)
 
-        ceDateHired.StartDate = DateTime.Now.AddYears(-60)
-        ceDateHired.EndDate = DateTime.Now
+    '    ceDateHired.StartDate = DateTime.Now.AddYears(-60)
+    '    ceDateHired.EndDate = DateTime.Now
 
-        ceArrival.StartDate = DateTime.Now.AddMonths(-2)
-        ceArrival.EndDate = DateTime.Now.AddYears(+2)
+    '    ceArrival.StartDate = DateTime.Now.AddMonths(-2)
+    '    ceArrival.EndDate = DateTime.Now.AddYears(+2)
 
-        ceReport.StartDate = DateTime.Now.AddMonths(-2)
-        ceReport.EndDate = DateTime.Now.AddYears(+2)
+    '    ceReport.StartDate = DateTime.Now.AddMonths(-2)
+    '    ceReport.EndDate = DateTime.Now.AddYears(+2)
 
-        ceSignOn.StartDate = DateTime.Now.AddMonths(-2)
-        ceSignOn.EndDate = DateTime.Now.AddYears(+2)
+    '    ceSignOn.StartDate = DateTime.Now.AddMonths(-2)
+    '    ceSignOn.EndDate = DateTime.Now.AddYears(+2)
 
-        ceSignOff.StartDate = DateTime.Now.AddMonths(-2)
-        ceSignOff.EndDate = DateTime.Now.AddYears(+2)
+    '    ceSignOff.StartDate = DateTime.Now.AddMonths(-2)
+    '    ceSignOff.EndDate = DateTime.Now.AddYears(+2)
 
-        ceAllotDate.StartDate = DateTime.Now.AddYears(-2)
-        ceAllotDate.EndDate = DateTime.Now.AddYears(+2)
+    '    ceAllotDate.StartDate = DateTime.Now.AddYears(-2)
+    '    ceAllotDate.EndDate = DateTime.Now.AddYears(+2)
 
-        ceAllotDateU.StartDate = DateTime.Now.AddYears(-2)
-        ceAllotDateU.EndDate = DateTime.Now.AddYears(+2)
+    '    ceAllotDateU.StartDate = DateTime.Now.AddYears(-2)
+    '    ceAllotDateU.EndDate = DateTime.Now.AddYears(+2)
 
-        ceExStart2.StartDate = DateTime.Now.AddYears(-60)
-        ceExStart2.EndDate = DateTime.Now
+    '    ceExStart2.StartDate = DateTime.Now.AddYears(-60)
+    '    ceExStart2.EndDate = DateTime.Now
 
-        ceExEnd2.StartDate = DateTime.Now.AddYears(-60)
-        ceExEnd2.EndDate = DateTime.Now.AddYears(+15)
+    '    ceExEnd2.StartDate = DateTime.Now.AddYears(-60)
+    '    ceExEnd2.EndDate = DateTime.Now.AddYears(+15)
 
-        ceMedDate.StartDate = DateTime.Now.AddYears(-5)
-        ceMedDate.EndDate = DateTime.Now.AddYears(+5)
+    '    ceMedDate.StartDate = DateTime.Now.AddYears(-5)
+    '    ceMedDate.EndDate = DateTime.Now.AddYears(+5)
 
-        ceFit.StartDate = DateTime.Now.AddYears(-5)
-        ceFit.EndDate = DateTime.Now.AddYears(+5)
+    '    ceFit.StartDate = DateTime.Now.AddYears(-5)
+    '    ceFit.EndDate = DateTime.Now.AddYears(+5)
 
-        ceMedDateU.StartDate = DateTime.Now.AddYears(-5)
-        ceMedDateU.EndDate = DateTime.Now.AddYears(+5)
+    '    ceMedDateU.StartDate = DateTime.Now.AddYears(-5)
+    '    ceMedDateU.EndDate = DateTime.Now.AddYears(+5)
 
-        ceFitU.StartDate = DateTime.Now.AddYears(-5)
-        ceFitU.EndDate = DateTime.Now.AddYears(+5)
-    End Sub
+    '    ceFitU.StartDate = DateTime.Now.AddYears(-5)
+    '    ceFitU.EndDate = DateTime.Now.AddYears(+5)
+    'End Sub
 
     Private Sub LoadDefaults()
         'Fill Contract DDL
@@ -433,12 +433,16 @@ Public Class CrewProfile
         ddlSearch.DataBind()
 
         ' Dropdown Rank
-        ddlRank3.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
+
+        ViewState("RankData") = MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
+        ddlRank3.DataSource = ViewState("RankData")
+
+
         ddlRank3.DataTextField = "RankDescription"
         ddlRank3.DataValueField = "RankCode"
         ddlRank3.DataBind()
 
-        ddlRank2.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
+        ddlRank2.DataSource = ViewState("RankData") 'MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
         ddlRank2.DataTextField = "RankDescription"
         ddlRank2.DataValueField = "RankCode"
         ddlRank2.DataBind()
@@ -449,44 +453,48 @@ Public Class CrewProfile
         ddlRank.DataValueField = "RankCode"
         ddlRank.DataBind()
 
-        ddlMedRank.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
+        ddlMedRank.DataSource = ViewState("RankData") 'MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
         ddlMedRank.DataTextField = "RankDescription"
         ddlMedRank.DataValueField = "RankCode"
         ddlMedRank.DataBind()
 
-        ddlMedRankU.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
+        ddlMedRankU.DataSource = ViewState("RankData") 'MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
         ddlMedRankU.DataTextField = "RankDescription"
         ddlMedRankU.DataValueField = "RankCode"
         ddlMedRankU.DataBind()
 
-        ddlDocCode.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT DocCode,DocTitle FROM Documents ORDER BY DocTitle")
+
+        ViewState("DocList") = MainClass.Library.Adapter.GetRecordSet("SELECT DocCode,DocTitle FROM Documents ORDER BY DocTitle")
+        ddlDocCode.DataSource = ViewState("DocList")
         ddlDocCode.DataTextField = "DocTitle"
         ddlDocCode.DataValueField = "DocCode"
         ddlDocCode.DataBind()
 
-        ddlDocCodeUpdate.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT DocCode,DocTitle FROM Documents ORDER BY DocTitle")
+        ddlDocCodeUpdate.DataSource = ViewState("DocList") ' MainClass.Library.Adapter.GetRecordSet("SELECT DocCode,DocTitle FROM Documents ORDER BY DocTitle")
         ddlDocCodeUpdate.DataTextField = "DocTitle"
         ddlDocCodeUpdate.DataValueField = "DocCode"
         ddlDocCodeUpdate.DataBind()
 
-        ddlReason.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT Code,SignOffReason FROM SignOffReason ORDER BY SignOffReason")
+        ViewState("Reason") = MainClass.Library.Adapter.GetRecordSet("SELECT Code,SignOffReason FROM SignOffReason ORDER BY SignOffReason")
+        ddlReason.DataSource = ViewState("Reason")
         ddlReason.DataTextField = "SignOffReason"
         ddlReason.DataValueField = "Code"
         ddlReason.DataBind()
         ddlReason.Items.Insert(0, New ListItem("[--Select--]", String.Empty))
 
-        ddlReasonU.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT Code,SignOffReason FROM SignOffReason ORDER BY SignOffReason")
+        ddlReasonU.DataSource = ViewState("Reason") 'MainClass.Library.Adapter.GetRecordSet("SELECT Code,SignOffReason FROM SignOffReason ORDER BY SignOffReason")
         ddlReasonU.DataTextField = "SignOffReason"
         ddlReasonU.DataValueField = "Code"
         ddlReasonU.DataBind()
         ddlReasonU.Items.Insert(0, New ListItem("[--Select--]", String.Empty))
 
-        ddlRelationship.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT LookUpCode,LookUpDescription FROM GenericLookUp WHERE GenericLookupCode='RS' ORDER BY LookUpDescription")
+        ViewState("Relationship") = MainClass.Library.Adapter.GetRecordSet("SELECT LookUpCode,LookUpDescription FROM GenericLookUp WHERE GenericLookupCode='RS' ORDER BY LookUpDescription")
+        ddlRelationship.DataSource = ViewState("Relationship")
         ddlRelationship.DataTextField = "LookupDescription"
         ddlRelationship.DataValueField = "LookupCode"
         ddlRelationship.DataBind()
 
-        ddlERelationship.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT LookUpCode,LookUpDescription FROM GenericLookUp WHERE GenericLookupCode='RS' ORDER BY LookUpDescription")
+        ddlERelationship.DataSource = ViewState("Relationship") 'MainClass.Library.Adapter.GetRecordSet("SELECT LookUpCode,LookUpDescription FROM GenericLookUp WHERE GenericLookupCode='RS' ORDER BY LookUpDescription")
         ddlERelationship.DataTextField = "LookupDescription"
         ddlERelationship.DataValueField = "LookupCode"
         ddlERelationship.DataBind()
@@ -521,32 +529,36 @@ Public Class CrewProfile
         'ddlFlag2.DataValueField = "Code"
         'ddlFlag2.DataBind()
 
-        ddlFL.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
+        ViewState("Country") = MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
+        ddlFL.DataSource = ViewState("Country")
         ddlFL.DataTextField = "Country"
         ddlFL.DataValueField = "Code"
         ddlFL.DataBind()
+        ddlFL.Items.Insert(0, New ListItem("", String.Empty))
 
-        ddlFLs.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
+        ddlFLs.DataSource = ViewState("Country") 'MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
         ddlFLs.DataTextField = "Country"
         ddlFLs.DataValueField = "Code"
         ddlFLs.DataBind()
 
-        ddlFlagstate.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
+        ddlFlagstate.DataSource = ViewState("Country") 'MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
         ddlFlagstate.DataTextField = "Country"
         ddlFlagstate.DataValueField = "Code"
         ddlFlagstate.DataBind()
 
-        ddlFlagstateUpdate.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
+        ddlFlagstateUpdate.DataSource = ViewState("Country") 'MainClass.Library.Adapter.GetRecordSet("SELECT Country,Code FROM Countries ORDER BY Country")
         ddlFlagstateUpdate.DataTextField = "Country"
         ddlFlagstateUpdate.DataValueField = "Code"
         ddlFlagstateUpdate.DataBind()
 
-        ddlTrainingCenter.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT TrainingCenterCode, TrainingCenter FROM TrainingCenter ORDER BY TrainingCenter")
+
+        ViewState("TrainingCenter") = MainClass.Library.Adapter.GetRecordSet("SELECT TrainingCenterCode, TrainingCenter FROM TrainingCenter ORDER BY TrainingCenter")
+        ddlTrainingCenter.DataSource = ViewState("TrainingCenter")
         ddlTrainingCenter.DataTextField = "TrainingCenter"
         ddlTrainingCenter.DataValueField = "TrainingCenterCode"
         ddlTrainingCenter.DataBind()
 
-        ddlTrainingCenterU.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT TrainingCenterCode, TrainingCenter FROM TrainingCenter ORDER BY TrainingCenter")
+        ddlTrainingCenterU.DataSource = ViewState("TrainingCenter") 'MainClass.Library.Adapter.GetRecordSet("SELECT TrainingCenterCode, TrainingCenter FROM TrainingCenter ORDER BY TrainingCenter")
         ddlTrainingCenterU.DataTextField = "TrainingCenter"
         ddlTrainingCenterU.DataValueField = "TrainingCenterCode"
         ddlTrainingCenterU.DataBind()
@@ -561,18 +573,20 @@ Public Class CrewProfile
 
         htParameters.Add("Mode", 44)
         htParameters.Add("KeyWord", String.Empty)
-        ddlVessels.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+
+        ViewState("VesselList") = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+        ddlVessels.DataSource = ViewState("VesselList")
         ddlVessels.DataTextField = "VesselName"
         ddlVessels.DataValueField = "VesselCode"
         ddlVessels.DataBind()
 
-        ddlVesselSea.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+        ddlVesselSea.DataSource = ViewState("VesselList")  'MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
         ddlVesselSea.DataTextField = "VesselName"
         ddlVesselSea.DataValueField = "VesselCode"
         ddlVesselSea.DataBind()
         ddlVesselSea.Items.Insert(0, New ListItem("[--Select--]", String.Empty))
 
-        ddlVesselSeaUp.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+        ddlVesselSeaUp.DataSource = ViewState("VesselList")  'MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
         ddlVesselSeaUp.DataTextField = "VesselName"
         ddlVesselSeaUp.DataValueField = "VesselCode"
         ddlVesselSeaUp.DataBind()
@@ -582,7 +596,7 @@ Public Class CrewProfile
 
         'htParameters.Add("Mode", 44)
         'htParameters.Add("KeyWord", String.Empty)
-        ddlAllotVessels.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+        ddlAllotVessels.DataSource = ViewState("VesselList") 'MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
         ddlAllotVessels.DataTextField = "VesselName"
         ddlAllotVessels.DataValueField = "VesselCode"
         ddlAllotVessels.DataBind()
@@ -600,15 +614,20 @@ Public Class CrewProfile
 
         'htParameters.Add("Mode", 44)
         'htParameters.Add("KeyWord", String.Empty)
-        ddlMedVessel.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+        ddlMedVessel.DataSource = ViewState("VesselList") 'MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
         ddlMedVessel.DataTextField = "VesselName"
         ddlMedVessel.DataValueField = "VesselCode"
         ddlMedVessel.DataBind()
 
-        ddlMedVesselU.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
+        ddlMedVesselU.DataSource = ViewState("VesselList")  'MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
         ddlMedVesselU.DataTextField = "VesselName"
         ddlMedVesselU.DataValueField = "VesselCode"
         ddlMedVesselU.DataBind()
+
+        ddlSignatory.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT FirstName + ' ' + LastName as Signatory,Designation FROM Users WHERE IsSignatory=1")
+        ddlSignatory.DataTextField = "Signatory"
+        ddlSignatory.DataValueField = "Designation"
+        ddlSignatory.DataBind()
 
         htParameters.Clear()
     End Sub
@@ -760,7 +779,7 @@ Public Class CrewProfile
                 'hdnPass.Value = row("Password").ToString
                 lblPass.Text = row("Password").ToString
                 lblBirthplace.Text = row("Birthplace").ToString
-                lblSAddress.Text = row("SecondaryAddress").ToString
+                ' lblSAddress.Text = row("SecondaryAddress").ToString
                 lblSSS.Text = row("SSSNo").ToString
                 lblPhilhealth.Text = row("Philhealth").ToString
                 lblPagibig.Text = row("Pagibig").ToString
@@ -777,7 +796,7 @@ Public Class CrewProfile
                 'txtPass.Text = row("Password").ToString
                 hdnIsMale.Value = row("MaleGender").ToString
                 txtBirthplace.Text = row("Birthplace").ToString
-                txtSAddress.Text = row("SecondaryAddress").ToString
+                '  txtSAddress.Text = row("SecondaryAddress").ToString
                 If row("CivilStatus").ToString <> "" Then
                     ddlCivilStatus.SelectedValue = row("CivilStatus").ToString
                     lblCivilStatus.Text = row("CivilStatusDesc").ToString
@@ -828,7 +847,7 @@ Public Class CrewProfile
     End Sub
 
     Private Sub GetSea(ByVal CrewNo As String)
-
+        htParameters.Clear()
         htParameters.Add("CrewNo", CrewNo)
         htParameters.Add("Mode", 1)
         gvSeaRank.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "SeaServiceSel2")
@@ -1159,8 +1178,8 @@ Public Class CrewProfile
                         hdnSeaID.Value = row("ID").ToString
                         hdnSeaServiceCode.Value = row("SeaServiceCode").ToString
                         ddlRank3.SelectedValue = row("RankCode").ToString
-                        txtJoiningPortUp.Text = row("JoiningPort").ToString
-                        txtEmbarkingPortUp.Text = row("EmbarkingPort").ToString
+                        'txtJoiningPortUp.Text = row("JoiningPort").ToString
+                        ' txtEmbarkingPortUp.Text = row("EmbarkingPort").ToString
                         '   txtCallsignUp.Text = row("CallSign").ToString
                         '   txtGRTUp.Text = row("GRT").ToString
                         '   txtEngineType2.Text = row("EngineType").ToString
@@ -1250,7 +1269,7 @@ Public Class CrewProfile
         'If ddlEmployer.SelectedItem.ToString = "ALVIN A. VILLAFUERTE" Then
         '    hdnPosition.Value = "FIELD PERSONNEL OFFICER"
         'ElseIf ddlEmployer.SelectedItem.ToString = "BERNIE DELA CRUZ" Then
-        hdnPosition.Value = "POSITION HERE"
+        '  hdnPosition.Value = "POSITION HERE"
         'End If
 
         htParameters.Add("CrewNo", hdnCrewNo.Value)
@@ -1264,9 +1283,9 @@ Public Class CrewProfile
         rvContract.LocalReport.DataSources.Add(datasource)
         htParameters.Clear()
 
-        Dim params(1) As Microsoft.Reporting.WebForms.ReportParameter
-        params(0) = New Microsoft.Reporting.WebForms.ReportParameter("EmployerName", "EMPLOYER NAME HERE")
-        params(1) = New Microsoft.Reporting.WebForms.ReportParameter("Designation", hdnPosition.Value)
+        Dim params(1) As ReportParameter
+        params(0) = New ReportParameter("EmployerName", ddlSignatory.SelectedItem.Text)
+        params(1) = New ReportParameter("Designation", ddlSignatory.SelectedValue)
         rvContract.LocalReport.SetParameters(params)
 
         ScriptManager.RegisterStartupScript(Me, Page.GetType, "Pop", "openModalcon();", True)
@@ -2020,8 +2039,8 @@ Public Class CrewProfile
             .Add("CrewNo", hdnCrewNo.Value)
             .Add("SeaServiceCode", CreateSequenceNo("SS"))
             .Add("RankCode", ddlRank2.SelectedValue)
-            .Add("JoiningPort", txtJoiningPort.Text)
-            .Add("EmbarkingPort", txtEmbarkingPort.Text)
+            ' .Add("JoiningPort", txtJoiningPort.Text)
+            ' .Add("EmbarkingPort", txtEmbarkingPort.Text)
 
             If txtVName.Text <> "" Then
                 .Add("VesselName", txtVName.Text)
@@ -2216,7 +2235,7 @@ Public Class CrewProfile
             .Add("LastName", txtLName.Text)
             .Add("MiddleName", txtMidName.Text)
             .Add("MaleGender", hdnIsMale.Value)
-            .Add("SecondaryAddress", txtSAddress.Text)
+            ' .Add("SecondaryAddress", txtSAddress.Text)
             .Add("SSSNo", txtSSS.Text)
             .Add("Philhealth", txtPhilHealth.Text)
             .Add("Pagibig", txtPagibig.Text)
@@ -2317,8 +2336,8 @@ Public Class CrewProfile
         ' txtCallsign.Text = String.Empty
         '   txtGRT.Text = String.Empty
         '  txtEngineType.Text = String.Empty
-        txtJoiningPort.Text = String.Empty
-        txtEmbarkingPort.Text = String.Empty
+        ' txtJoiningPort.Text = String.Empty
+        'txtEmbarkingPort.Text = String.Empty
         '  txtVesselName.Text = String.Empty
         txtExStartDate.Text = String.Empty
         txtExEndDate.Text = String.Empty
@@ -2923,19 +2942,21 @@ Public Class CrewProfile
         mvVesselStat.SetActiveView(vProfileVessel)
     End Sub
 
-    Protected Sub txtSignOn_TextChanged(sender As Object, e As EventArgs)
-        If txtSignOn.Text <> "" Then
-            ceSignOff.StartDate = txtSignOn.Text
-            ceSignOff.EndDate = DateTime.Now.AddYears(+2)
-        End If
-    End Sub
+    'Protected Sub txtSignOn_TextChanged(sender As Object, e As EventArgs)
+    '    If txtSignOn.Text <> "" Then
+    '        Dim sSignOn = New Date("MM/dd/yyyy")
+    '        sSignOn = txtSignOn.Text
+    '        ceSignOff.StartDate = sSignOn
+    '        ceSignOff.EndDate = DateTime.Now.AddYears(+2)
+    '    End If
+    'End Sub
 
-    Protected Sub txtArrival_TextChanged(sender As Object, e As EventArgs)
-        If txtArrival.Text <> "" Then
-            ceReport.StartDate = txtArrival.Text
-            ceReport.EndDate = DateTime.Now.AddYears(+2)
-        End If
-    End Sub
+    'Protected Sub txtArrival_TextChanged(sender As Object, e As EventArgs)
+    '    If txtArrival.Text <> "" Then
+    '        ceReport.StartDate = txtArrival.Text
+    '        ceReport.EndDate = DateTime.Now.AddYears(+2)
+    '    End If
+    'End Sub
 
     Private Sub lbProfileVesselUpdate_Click(sender As Object, e As EventArgs) Handles lbProfileVesselUpdate.Click
 
@@ -3141,8 +3162,8 @@ Public Class CrewProfile
             .Add("ID", hdnSeaID.Value)
             .Add("SeaServiceCode", hdnSeaServiceCode.Value)
             .Add("RankCode", ddlRank3.SelectedValue)
-            .Add("JoiningPort", txtJoiningPortUp.Text)
-            .Add("EmbarkingPort", txtEmbarkingPortUp.Text)
+            '  .Add("JoiningPort", txtJoiningPortUp.Text)
+            ' .Add("EmbarkingPort", txtEmbarkingPortUp.Text)
 
             If txtVName.Text = "" Then
                 .Add("VesselName", txtVNames.Text)

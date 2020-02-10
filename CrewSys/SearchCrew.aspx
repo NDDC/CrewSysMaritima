@@ -38,10 +38,10 @@
 
             <div class="page-header card">
                 <div class="card-block">
-                    <h5 class="m-b-10 pull-left">CREWS</h5>
+                    <h5 class="m-b-10 pull-left"></h5>
                     <h5 class="m-b-10 pull-right">
                         <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
-                        Seafarer list -
+                        Total Crew All Status -
                 <asp:Label ID="lblCount" runat="server" Text=""></asp:Label>
                     </h5>
                 </div>

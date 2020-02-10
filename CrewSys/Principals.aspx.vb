@@ -432,12 +432,12 @@
     Private Sub GetDocs()
 
         htParameters.Add("Mode", 1)
-        htParameters.Add("PrincipalCode", txtPrincipalCode.Text)
-        htParameters.Add("IsArchive", 0)
+        '  htParameters.Add("PrincipalCode", txtPrincipalCode.Text)
+        ' htParameters.Add("IsArchive", 0)
 
-        ViewState("Flags") = MainClass.Library.Adapter.GetRecordSet(htParameters, "VPDocSel")
+        ViewState("Flags") = MainClass.Library.Adapter.GetRecordSet(htParameters, "DocSel")
 
-        gvDocs.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VPDocSel")
+        gvDocs.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "DocSel")
         gvDocs.DataBind()
         htParameters.Clear()
 

@@ -1619,6 +1619,9 @@
     <Content Include="DataSet\CrewSysDataSet.xsc">
       <DependentUpon>CrewSysDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
     <None Include="DataSet\CrewSysDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CrewSysDataSet.Designer.vb</LastGenOutput>
