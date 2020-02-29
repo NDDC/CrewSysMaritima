@@ -13,7 +13,7 @@
             $(".selectpicker").selectpicker();
         });
 
-        function RefreshDDL() {
+       <%-- function RefreshDDL() {
             $("#<%= ddlStatus.ClientID%>").selectpicker();
             $("#<%= ddlVessel.ClientID%>").selectpicker();
             $("#<%= ddlRank.ClientID%>").selectpicker();
@@ -21,10 +21,10 @@
         }
         $(function () {
             RefreshDDL()
-        });
-        function pageLoad(sender, args) {
-            RefreshDDL()
-        }
+        });--%>
+        //function pageLoad(sender, args) {
+        //    RefreshDDL()
+        //}
 
     </script>
 
@@ -126,19 +126,19 @@
                         <div class="form-group row">
                             <div class="col-md-12 col-lg-2">
                                 <asp:Label ID="Label2" runat="server" Text="Vessel:" Font-Bold="True"></asp:Label>
-                                <asp:DropDownList ID="ddlVessel" runat="server" CssClass="form-control selectpicker pull-right" data-live-search="true"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlVessel" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
                             </div>
                             <div class="col-md-12 col-lg-2">
                                 <asp:Label ID="Label5" runat="server" Text="Rank:" Font-Bold="True"></asp:Label>
-                                <asp:DropDownList ID="ddlRank" runat="server" CssClass="form-control selectpicker pull-right" data-live-search="true"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlRank" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
                             </div>
                             <div class="col-md-12 col-lg-2">
                                 <asp:Label ID="Label6" runat="server" Text="Status:" Font-Bold="True"></asp:Label>
-                                <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control selectpicker pull-right" data-live-search="true"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
                             </div>
                             <div class="col-md-12 col-lg-1">
                                 <asp:Label ID="Label11" runat="server" Text="Avail:" Font-Bold="True"></asp:Label>
-                                <asp:DropDownList ID="ddlAvail" runat="server" CssClass="form-control selectpicker pull-right" data-live-search="true">
+                                <asp:DropDownList ID="ddlAvail" runat="server" CssClass="form-control pull-right" data-live-search="true">
                                     <asp:ListItem Text="[--Select All--]" Value=""></asp:ListItem>
                                     <asp:ListItem Text="JANUARY" Value="JAN"></asp:ListItem>
                                     <asp:ListItem Text="FEBRUARY" Value="FEB"></asp:ListItem>

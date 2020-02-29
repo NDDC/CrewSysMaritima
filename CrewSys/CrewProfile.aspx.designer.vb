@@ -1544,15 +1544,6 @@ Partial Public Class CrewProfile
     Protected WithEvents lblDocTitle As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''ifPDF control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ifPDF As Global.System.Web.UI.HtmlControls.HtmlIframe
-    
-    '''<summary>
     '''btnUpdateCrewDoc control.
     '''</summary>
     '''<remarks>

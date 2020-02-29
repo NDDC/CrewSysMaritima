@@ -29,11 +29,11 @@
                                 <div class="form-group row">
                                     <div class="col-md-12 col-lg-5">
                                         <asp:Label ID="lblddlPrincipal" runat="server" Text="Principal:" Font-Bold="True"></asp:Label>
-                                        <asp:DropDownList ID="ddlPrincipal" runat="server" CssClass="form-control selectpicker pull-right" data-live-search="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlPrincipal" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
                                     </div>
                                     <div class="col-md-12 col-lg-5">
                                         <asp:Label ID="lblVessel" runat="server" Text="Vessel:" Font-Bold="True"></asp:Label>
-                                        <asp:DropDownList ID="ddlVessel" runat="server" CssClass="form-control selectpicker pull-right" data-live-search="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlVessel" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
                                     </div>
                                     <div class="col-md-12 col-lg-2">
                                         <asp:Label ID="lblSearch" runat="server" Text="Search" Font-Bold="True"></asp:Label>
@@ -61,6 +61,7 @@
                                                     <asp:LinkButton ID="lbVesselName" runat="server" Text='<%# Bind("VesselName") %>' CommandName="View" CommandArgument='<%#Eval("ID")%>' CssClass="text-primary"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
+                                            <asp:BoundField DataField="CrewOnboard" HeaderText="Crew Onboard" SortExpression="CrewOnboard" />
                                             <asp:BoundField DataField="Description" HeaderText="Principal" SortExpression="Description" />
                                             <asp:BoundField DataField="Country" HeaderText="Flag" SortExpression="Country" />
                                             <asp:BoundField DataField="LookUpDescription" HeaderText="Vessel Type" SortExpression="LookUpDescription" />

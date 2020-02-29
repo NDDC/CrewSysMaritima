@@ -10,7 +10,7 @@
 
             LoadPanels()
 
-            SearchCrew()
+            ' SearchCrew()
 
         End If
 
@@ -125,7 +125,7 @@
 
             htParameters.Clear()
 
-            ddlStatus.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT LookUpCode,LookUpDescription FROM GenericLookUp WHERE GenericLookupCode='CT' ORDER BY LookUpDescription")
+            ddlStatus.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT DISTINCT gl.LookUpCode,gl.LookUpDescription FROM GenericLookUp gl INNER JOIN CrewInfo ci ON ci.CrewStatus=gl.LookUpDescription WHERE GenericLookupCode='CT' ORDER BY LookUpDescription")
             ddlStatus.DataTextField = "LookupDescription"
             ddlStatus.DataValueField = "LookupDescription"
             ddlStatus.DataBind()
@@ -133,7 +133,7 @@
 
         End If
 
-        ddlRank.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT RankCode,RankDescription FROM Rank ORDER By RankSortCode")
+        ddlRank.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT r.RankCode,RankDescription FROM Rank r INNER JOIN CrewINfo CI ON CI.RankCode =r.RankCode  ORDER By RankSortCode")
         ddlRank.DataTextField = "RankDescription"
         ddlRank.DataValueField = "RankCode"
         ddlRank.DataBind()
@@ -268,17 +268,18 @@
                 htParameters.Add("Mode", 0)
             Else
                 htParameters.Add("Mode", 1)
-                htParameters.Add("Vessel", ddlVessel.SelectedValue)
+
                 htParameters.Add("Rank", ddlRank.SelectedValue)
                 htParameters.Add("Status", ddlStatus.SelectedValue)
-                htParameters.Add("Avail", ddlAvail.SelectedValue)
                 htParameters.Add("LastName", txtLastName.Text)
                 htParameters.Add("FirstName", txtFirstName.Text)
+                htParameters.Add("Vessel", ddlVessel.SelectedValue)
+                htParameters.Add("Avail", ddlAvail.SelectedValue)
             End If
         End If
         dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
-        gvCrewP.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
-        gvCrewP.DataBind()
+        'gvCrewP.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
+        'gvCrewP.DataBind()
 
         gvCrew.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
         gvCrew.DataBind()

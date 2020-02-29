@@ -1318,6 +1318,16 @@
     <Content Include="js\NavTabBS4.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logo\favicon.ico" />
+    <Content Include="Models\Generated\Database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.tt</DependentUpon>
+    </Content>
+    <Content Include="Models\Generated\Database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Database.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PetaPoco.cs" />
     <Content Include="Payroll.aspx" />
     <Content Include="PhotoPic\cfemale.png" />
     <Content Include="PhotoPic\cmale.png" />
@@ -1630,6 +1640,8 @@
     <Content Include="DataSet\CrewSysDataSet.xss">
       <DependentUpon>CrewSysDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
+    <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -1656,6 +1668,9 @@
     <Folder Include="EmpDocs\" />
     <Folder Include="Photo\" />
     <Folder Include="VPDocs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -893,7 +893,7 @@ Public Class CrewProfile
 
         ViewState("Trainings") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
 
-        gdTraining.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
+        gdTraining.DataSource = ViewState("Trainings")            ' MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
         gdTraining.DataBind()
         htParameters.Clear()
 
@@ -903,7 +903,7 @@ Public Class CrewProfile
 
         ViewState("Travels") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
 
-        gdTravel.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
+        gdTravel.DataSource = ViewState("Travels")       'MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
         gdTravel.DataBind()
         htParameters.Clear()
 
@@ -923,7 +923,7 @@ Public Class CrewProfile
 
         ViewState("Flags") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
 
-        gdFlagstate.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
+        gdFlagstate.DataSource = ViewState("Flags") 'MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewDocSel")
         gdFlagstate.DataBind()
         htParameters.Clear()
 
@@ -1519,7 +1519,7 @@ Public Class CrewProfile
             'hdnIndex.Value = index
             ViewDocRec(index)
             'lblDocTitle.Text = hdnDocTitleUpdate.Value
-            ifPDF.Attributes.Add("src", hdnDocPath.Value)
+            'ifPDF.Attributes.Add("src", hdnDocPath.Value)
 
             ScriptManager.RegisterStartupScript(Me, Page.GetType, "Pop", "openModalDs();", True)
 
@@ -1543,7 +1543,7 @@ Public Class CrewProfile
             'hdnIndex.Value = index
             ViewDocRec(index)
             'lblDocTitle.Text = hdnDocTitleUpdate.Value
-            ifPDF.Attributes.Add("src", hdnDocPath.Value)
+            ' ifPDF.Attributes.Add("src", hdnDocPath.Value)
 
             ScriptManager.RegisterStartupScript(Me, Page.GetType, "Pop", "openModalDs();", True)
 
@@ -1589,7 +1589,7 @@ Public Class CrewProfile
             'hdnIndex.Value = index
             ViewDocRec(index)
             'lblDocTitle.Text = hdnDocTitleUpdate.Value
-            ifPDF.Attributes.Add("src", hdnDocPath.Value)
+            ' ifPDF.Attributes.Add("src", hdnDocPath.Value)
 
             ScriptManager.RegisterStartupScript(Me, Page.GetType, "Pop", "openModalDs();", True)
 
@@ -3586,6 +3586,14 @@ Public Class CrewProfile
 
         hdnCurrent.Value = 4
         GetCurrentTab(hdnCurrent.Value)
+
+
     End Sub
+    'Protected Sub hlScannedDocs_DataBinding(ByVal sender As Object, ByVal e As System.EventArgs)
+    '    sender.navigateurl = "javascript:openModalDs(" & "'" & HttpContext.Current.Request.Url.Authority & "/" & Eval("Path") & "'" & ")"
+
+
+    '    ' ifPDF.Attributes.Add("src", HttpContext.Current.Request.Url.Authority & "/" & Eval("Path"))
+    'End Sub
 
 End Class

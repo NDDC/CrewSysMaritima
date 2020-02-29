@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage.Master" CodeBehind="CrewApplication.aspx.vb" Inherits="CrewSys.CrewApplication" %>
 
-.00
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link href="css/Form-Wizard.css" rel="stylesheet" />
@@ -28,22 +27,6 @@
             $(".selectpicker").selectpicker();
         });
 
-        function RefreshDDL() {
-            $("#<%= ddlRank.ClientID%>").selectpicker();
-            $("#<%= ddlYear.ClientID%>").selectpicker();
-            $("#<%= ddlCivilStatus.ClientID%>").selectpicker();
-            $("#<%= ddlFlagstate.ClientID%>").selectpicker();
-            $("#<%= ddlTrainingCenter.ClientID%>").selectpicker();
-            $("#<%= ddlDocCode.ClientID%>").selectpicker();
-            $("#<%= ddlRelationship.ClientID%>").selectpicker();
-            $("#<%= ddlRank2.ClientID%>").selectpicker();
-            $("#<%= ddlFlag.ClientID%>").selectpicker();
-            $("#<%= ddlVesselType.ClientID%>").selectpicker();
-            $("#<%= ddlFlagstate.ClientID%>").selectpicker();
-        }
-        $(function () {
-            RefreshDDL()
-        });
         function pageLoad(sender, args) {
             RefreshDDL()
 
@@ -216,7 +199,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Rank</label>
                                     <div class="col-sm-10">
-                                        <asp:DropDownList ID="ddlRank" runat="server" required="required" CssClass="form-control selectpicker" data-live-search="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlRank" runat="server" required="required" CssClass="form-control" data-live-search="true"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -295,7 +278,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Civil Status</label>
                                     <div class="col-sm-10">
-                                        <asp:DropDownList ID="ddlCivilStatus" runat="server" required="required" CssClass="form-control selectpicker" placeholder="Select Civil Status" data-live-search="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlCivilStatus" runat="server" required="required" CssClass="form-control" placeholder="Select Civil Status" data-live-search="true"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -315,7 +298,7 @@
                                     <div class="col-sm-10">
                                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                             <ContentTemplate>
-                                                <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-control selectpicker" data-live-search="true"></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-control" data-live-search="true"></asp:DropDownList>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
@@ -585,7 +568,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Relationship<span class="required">*</span></label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlRelationship" runat="server" required="required" CssClass="form-control rounded selectpicker" placeholder="Select Relationship" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlRelationship" runat="server" required="required" CssClass="form-control rounded" placeholder="Select Relationship" data-live-search="true"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -643,7 +626,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Rank</label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlRank2" runat="server" required="required" CssClass="form-control selectpicker" placeholder="Select Rank" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlRank2" runat="server" required="required" CssClass="form-control" placeholder="Select Rank" data-live-search="true"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -681,13 +664,13 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Flag</label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlFlag" runat="server" CssClass="form-control selectpicker" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlFlag" runat="server" CssClass="form-control" data-live-search="true"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Vessel Type</label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlVesselType" runat="server" CssClass="form-control rounded selectpicker" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlVesselType" runat="server" CssClass="form-control rounded" data-live-search="true"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -734,21 +717,21 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Flagstate<span class="required">*</span></label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlFlagstate" runat="server" CssClass="form-control selectpicker" placeholder="Select Flagstate" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlFlagstate" runat="server" CssClass="form-control" placeholder="Select Flagstate" data-live-search="true"></asp:DropDownList>
                             <asp:Label ID="lblFlagst" runat="server" Text="For Flagstate and Travel" CssClass="text-text-info"></asp:Label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Training Center<span class="required">*</span></label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlTrainingCenter" runat="server" CssClass="form-control selectpicker" placeholder="Select Training Center" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlTrainingCenter" runat="server" CssClass="form-control" placeholder="Select Training Center" data-live-search="true"></asp:DropDownList>
                             <asp:Label ID="lblTrainingCe" runat="server" Text="For Training" CssClass="text-text-info"></asp:Label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Document Title<span class="required">*</span></label>
                         <div class="col-sm-10">
-                            <asp:DropDownList ID="ddlDocCode" runat="server" required="required" CssClass="form-control selectpicker" placeholder="Select Document" data-live-search="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlDocCode" runat="server" required="required" CssClass="form-control" placeholder="Select Document" data-live-search="true"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="form-group row">
