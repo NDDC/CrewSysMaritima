@@ -23,7 +23,7 @@
         If Session("Access") = "P" Then
             htParameters.Clear()
             htParameters.Add("Mode", 4)
-            htParameters.Add("Status", "Onboard")
+            htParameters.Add("CrewStatus", "Onboard")
             htParameters.Add("PrincipalCode", Session("PCode"))
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("Onboard") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
@@ -31,7 +31,7 @@
 
             htParameters.Clear()
             htParameters.Add("Mode", 4)
-            htParameters.Add("Status", "Lined-Up")
+            htParameters.Add("CrewStatus", "Lined-Up")
             htParameters.Add("PrincipalCode", Session("PCode"))
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("Lined-up") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
@@ -39,7 +39,7 @@
 
             htParameters.Clear()
             htParameters.Add("Mode", 4)
-            htParameters.Add("Status", "On-Vacation")
+            htParameters.Add("CrewStatus", "On-Vacation")
             htParameters.Add("PrincipalCode", Session("PCode"))
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("On-Vacation") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
@@ -51,28 +51,28 @@
         Else
             htParameters.Clear()
             htParameters.Add("Mode", 2)
-            htParameters.Add("Status", "Onboard")
+            htParameters.Add("CrewStatus", "Onboard")
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("Onboard") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             lbOnboard.Text = dt.Rows.Count
 
             htParameters.Clear()
             htParameters.Add("Mode", 2)
-            htParameters.Add("Status", "Lined-Up")
+            htParameters.Add("CrewStatus", "Lined-Up")
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("Lined-up") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             lbLineup.Text = dt.Rows.Count
 
             htParameters.Clear()
             htParameters.Add("Mode", 2)
-            htParameters.Add("Status", "On-Vacation")
+            htParameters.Add("CrewStatus", "On-Vacation")
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("On-Vacation") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             lbOnvacation.Text = dt.Rows.Count
 
             htParameters.Clear()
             htParameters.Add("Mode", 2)
-            htParameters.Add("Status", "Applicant")
+            htParameters.Add("CrewStatus", "Applicant")
             dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             Session("Applicant") = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")
             lbApplicants.Text = dt.Rows.Count
@@ -97,7 +97,7 @@
     Private Sub DropdownLoad()
 
         If Session("Access") = "P" Then
-            htParameters.Add("Status", "Active")
+            htParameters.Add("CrewStatus", "Active")
             htParameters.Add("PrincipalCode", Session("PCode"))
             htParameters.Add("Mode", 7)
             ddlVessel.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselSel")
@@ -138,6 +138,13 @@
         ddlRank.DataValueField = "RankCode"
         ddlRank.DataBind()
         ddlRank.Items.Insert(0, New ListItem("[--Select All--]", String.Empty))
+
+
+        ddlAvail.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT DISTINCT Avail as Code, Avail as Description FROM CrewInfo")
+        ddlAvail.DataTextField = "Description"
+        ddlAvail.DataValueField = "Code"
+        ddlAvail.DataBind()
+        ddlAvail.Items.Insert(0, New ListItem("[--Select All--]", String.Empty))
 
     End Sub
 
@@ -255,9 +262,9 @@
         If Session("Access") = "P" Then
 
             htParameters.Add("Mode", 3)
-            htParameters.Add("Vessel", ddlVessel.SelectedValue)
-            htParameters.Add("Rank", ddlRank.SelectedValue)
-            htParameters.Add("Status", ddlStatus.SelectedValue)
+            htParameters.Add("VesselCode", ddlVessel.SelectedValue)
+            htParameters.Add("RankCode", ddlRank.SelectedValue)
+            htParameters.Add("CrewStatus", ddlStatus.SelectedValue)
             htParameters.Add("Avail", ddlAvail.SelectedValue)
             htParameters.Add("LastName", txtLastName.Text)
             htParameters.Add("FirstName", txtFirstName.Text)
@@ -269,12 +276,13 @@
             Else
                 htParameters.Add("Mode", 1)
 
-                htParameters.Add("Rank", ddlRank.SelectedValue)
-                htParameters.Add("Status", ddlStatus.SelectedValue)
+                htParameters.Add("RankCode", ddlRank.SelectedValue)
+                htParameters.Add("CrewStatus", ddlStatus.SelectedValue)
                 htParameters.Add("LastName", txtLastName.Text)
                 htParameters.Add("FirstName", txtFirstName.Text)
-                htParameters.Add("Vessel", ddlVessel.SelectedValue)
+                htParameters.Add("VesselCode", ddlVessel.SelectedValue)
                 htParameters.Add("Avail", ddlAvail.SelectedValue)
+
             End If
         End If
         dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "CrewInfoSel3")

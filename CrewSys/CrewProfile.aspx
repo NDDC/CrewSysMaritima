@@ -17,7 +17,7 @@
             $('#tabsmain a[href="#' + tabId + '"]').tab('show');
             $("#tabsmain a").click(function () {
                 selectedTab.val($(this).attr("href").substring(1));
-            });
+            }); 
         });
         $(document).ready(function () {
             var selectedTab1 = $("#<%=hdnDocCurrent.ClientID%>");
@@ -741,7 +741,7 @@
                                                                 <li>TIN Number:
                                                         <asp:Label ID="lblTIN" runat="server" Font-Bold="true"></asp:Label>
                                                                 </li>
-                                                                <li>SRC:
+                                                                <li>ERN:
                                                         <asp:Label ID="lblSrc" runat="server" Font-Bold="true"></asp:Label>
                                                                 </li>
                                                                 <li>SIRB:
@@ -1829,14 +1829,13 @@
                                         onkeydown="if(event.keyCode<8 || event.keyCode>8 && (event.keyCode<46 || event.keyCode>46) && (event.keyCode<48 || event.keyCode>57))event.returnValue=false;">
                                     </asp:TextBox>
                                     <asp:Label ID="lblAllotNote" runat="server" Text="" CssClass="text-text-info"></asp:Label>
-                                    <asp:Label ID="lblErrorAllot" runat="server" Text="Allotment Allocation Exceeded!" CssClass="text-danger"></asp:Label>
+                                   <%-- <asp:Label ID="lblErrorAllot" runat="server" Text="Allotment Allocation Exceeded!" CssClass="text-danger"></asp:Label>--%>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Allotment<span class="required">*</span></label>
+                                <label class="col-sm-2 col-form-label">Zip Code<span class="required">*</span></label>
                                 <div class="col-sm-10">
-                                    <asp:TextBox ID="txtZipCode" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Zip Code"
-                                        onkeydown="if(event.keyCode<8 || event.keyCode>8 && (event.keyCode<46 || event.keyCode>46) && (event.keyCode<48 || event.keyCode>57))event.returnValue=false;">
+                                    <asp:TextBox ID="txtZipCode" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Zip Code" >
                                     </asp:TextBox>
                                     <ajaxToolkit:MaskedEditExtender ID="meZip" runat="server" Enabled="True" Mask="9999" MaskType="Number"
                                         InputDirection="LefttoRight" TargetControlID="txtZipCode" />
@@ -1930,10 +1929,10 @@
                                 <label class="col-sm-2 col-form-label">Allotment<span class="required">*</span></label>
                                 <div class="col-sm-10">
                                     <asp:TextBox ID="txtEAllotment" runat="server" required="required" CssClass="form-control form-control-round" placeholder="Allotment"
-                                        onkeydown="if(event.keyCode<8 || event.keyCode>8 && (event.keyCode<46 || event.keyCode>46) && (event.keyCode<48 || event.keyCode>57))event.returnValue=false;">
+                                       >
                                     </asp:TextBox>
                                     <asp:Label ID="lblAllotEdit" runat="server" Text="" CssClass="text-text-info"></asp:Label>
-                                    <asp:Label ID="lblErrorAllotE" runat="server" Text="Allotment Allocation Exceeded!" CssClass="text-danger"></asp:Label>
+                                    <%--<asp:Label ID="lblErrorAllotE" runat="server" Text="Allotment Allocation Exceeded!" CssClass="text-danger"></asp:Label>--%>
                                 </div>
                             </div>
                             <div class="form-group row">

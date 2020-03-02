@@ -144,27 +144,26 @@
 
     Protected Sub ddlPrincipalCode_TextChanged(sender As Object, e As EventArgs)
 
-        ddlVessel.Items.Clear()
-        ddlVessel.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT VesselCode,VesselName FROM Vessels WHERE PrincipalCode='" & ddlPrincipal.SelectedValue & "' and VesselStatus='ACTIVE' ORDER By VesselName")
-        ddlVessel.DataTextField = "VesselName"
-        ddlVessel.DataValueField = "VesselCode"
-        ddlVessel.DataBind()
-        ddlVessel.Items.Insert(0, New ListItem("[--All--]", 0))
+
 
     End Sub
 
     Private Sub LoadDefaults()
         If Session("Access") = "P" Then
 
-            ddlVessel.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT VesselName, VesselCode from Vessels WHERE PrincipalCode='" & Session("PCode") & "'")
+            ddlVessel.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT VesselName, VesselCode from Vessels v INNER JOIN CrewInfo ci ON ci.VeselCode=v.VesselCode WHERE PrincipalCode='" & Session("PCode") & "'")
             ddlVessel.DataTextField = "VesselName"
             ddlVessel.DataValueField = "VesselCode"
             ddlVessel.DataBind()
             htParameters.Clear()
 
         Else
-            BindDropdown(ddlVessel, "VesselCode", "VesselName", "Vessels")
-            ddlVessel.Items.Insert(0, New ListItem("[--Select All--]", String.Empty))
+            'ddlVessel.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT v.VesselName, v.VesselCode from Vessels v INNER JOIN CrewInfo ci ON ci.VesselCode=v.VesselCode WHERE PrincipalCode='" & ddlPrincipal.SelectedValue & "'")
+            'ddlVessel.DataTextField = "VesselName"
+            'ddlVessel.DataValueField = "VesselCode"
+            'ddlVessel.DataBind()
+            '  BindDropdown(ddlVessel, "VesselCode", "VesselName", "Vessels")
+            ' ddlVessel.Items.Insert(0, New ListItem("[--Select All--]", String.Empty))
         End If
 
         BindDropdown(ddlPrincipal, "PrincipalCode", "Description", "Principal")
@@ -415,4 +414,22 @@
 
     End Function
 
+
+
+    Private Sub ddlPrincipal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlPrincipal.SelectedIndexChanged
+
+        ddlVessel.DataSource = MainClass.Library.Adapter.GetRecordSet("SELECT DISTINCT v.VesselName, v.VesselCode from Vessels v INNER JOIN CrewInfo ci ON ci.VesselCode=v.VesselCode WHERE ci.CrewStatus='Onboard' AND PrincipalCode='" & ddlPrincipal.SelectedValue & "'")
+        ddlVessel.DataTextField = "VesselName"
+        ddlVessel.DataValueField = "VesselCode"
+        ddlVessel.DataBind()
+    End Sub
+
+    Private Sub ddlVessel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlVessel.SelectedIndexChanged
+
+
+        htParameters.Add("Keyword", ddlVessel.SelectedItem.Text)
+        gvCrewList.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "VesselCrewSel")
+        gvCrewList.DataBind()
+
+    End Sub
 End Class

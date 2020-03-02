@@ -138,20 +138,8 @@
                             </div>
                             <div class="col-md-12 col-lg-1">
                                 <asp:Label ID="Label11" runat="server" Text="Avail:" Font-Bold="True"></asp:Label>
-                                <asp:DropDownList ID="ddlAvail" runat="server" CssClass="form-control pull-right" data-live-search="true">
-                                    <asp:ListItem Text="[--Select All--]" Value=""></asp:ListItem>
-                                    <asp:ListItem Text="JANUARY" Value="JAN"></asp:ListItem>
-                                    <asp:ListItem Text="FEBRUARY" Value="FEB"></asp:ListItem>
-                                    <asp:ListItem Text="MARCH" Value="MAR"></asp:ListItem>
-                                    <asp:ListItem Text="APRIL" Value="APR"></asp:ListItem>
-                                    <asp:ListItem Text="MAY" Value="MAY"></asp:ListItem>
-                                    <asp:ListItem Text="JUNE" Value="JUN"></asp:ListItem>
-                                    <asp:ListItem Text="JULY" Value="JUL"></asp:ListItem>
-                                    <asp:ListItem Text="AUGUST" Value="AUG"></asp:ListItem>
-                                    <asp:ListItem Text="SEPTEMBER" Value="SEPT"></asp:ListItem>
-                                    <asp:ListItem Text="OCTOBER" Value="OCT"></asp:ListItem>
-                                    <asp:ListItem Text="NOVEMBER" Value="NOV"></asp:ListItem>
-                                    <asp:ListItem Text="DECEMBER" Value="DEC"></asp:ListItem>
+                                <asp:DropDownList ID="ddlAvail" runat="server" CssClass="form-control" data-live-search="true">
+                                   
                                 </asp:DropDownList>
                             </div>
                             <div class="col-md-12 col-lg-2">

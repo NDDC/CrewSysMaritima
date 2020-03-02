@@ -29,11 +29,11 @@
                                 <div class="form-group row">
                                     <div class="col-md-12 col-lg-5">
                                         <asp:Label ID="lblddlPrincipal" runat="server" Text="Principal:" Font-Bold="True"></asp:Label>
-                                        <asp:DropDownList ID="ddlPrincipal" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlPrincipal" runat="server" CssClass="form-control pull-right" data-live-search="true" AutoPostBack="true"></asp:DropDownList>
                                     </div>
                                     <div class="col-md-12 col-lg-5">
                                         <asp:Label ID="lblVessel" runat="server" Text="Vessel:" Font-Bold="True"></asp:Label>
-                                        <asp:DropDownList ID="ddlVessel" runat="server" CssClass="form-control pull-right" data-live-search="true"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlVessel" runat="server" CssClass="form-control pull-right" data-live-search="true" AutoPostBack="true"></asp:DropDownList>
                                     </div>
                                     <div class="col-md-12 col-lg-2">
                                         <asp:Label ID="lblSearch" runat="server" Text="Search" Font-Bold="True"></asp:Label>
