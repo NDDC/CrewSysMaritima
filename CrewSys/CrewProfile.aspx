@@ -111,46 +111,7 @@
          });
 
      
-        //function pageLoad(sender, args) {
-          
-
-        //    $('[id*=GenderM]').bootstrapToggle({
-        //        on: 'FEMALE',
-        //        off: 'MALE',
-        //        onstyle: 'primary',
-        //        offstyle: 'success'
-        //    });
-        //    //$('[id*=ENextKin]').bootstrapToggle({
-        //    //    on: 'NO',
-        //    //    off: 'YES',
-        //    //    onstyle: 'primary',
-        //    //    offstyle: 'default'
-        //    //});
-        //    $('[id*=chkAllotArchiveU]').bootstrapToggle({
-        //        on: 'NO',
-        //        off: 'YES',
-        //        onstyle: 'primary',
-        //        offstyle: 'success'
-        //    });
-        //    $('[id*=chkArchiveUpdate]').bootstrapToggle({
-        //        on: 'NO',
-        //        off: 'YES',
-        //        onstyle: 'primary',
-        //        offstyle: 'success'
-        //    });
-        //    $('[id*=NextKin2]').bootstrapToggle({
-        //        on: 'NO',
-        //        off: 'YES',
-        //        onstyle: 'primary',
-        //        offstyle: 'success'
-        //    });
-        //    $('[id*=ENextKin2]').bootstrapToggle({
-        //        on: 'NO',
-        //        off: 'YES',
-        //        onstyle: 'primary',
-        //        offstyle: 'success'
-        //    });
-        //}
+    
 
         function openModalP() {
             $('#UpPhoto').modal('show');
@@ -234,7 +195,14 @@
         }
 
     </script>
-
+    <style>
+        @media (min-width: 768px) {
+          .modal-xl {
+            width: 90%;
+           max-width:1200px;
+          }
+        }
+    </style>
     
 
 
@@ -1500,7 +1468,7 @@
 
             <!-- Modal -->
             <div class="modal fade" id="CrewDocs" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document" style="width:1250px;">
+                <div class="modal-dialog modal-xl" role="document" style="width:1250px;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">

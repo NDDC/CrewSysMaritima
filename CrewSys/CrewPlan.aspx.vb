@@ -264,7 +264,7 @@
             '        .Add("CrewNo", hdnCrew.Value)
             '    End With
             '    MainClass.Library.Command.Execute(htParameters, "SchedulerMod")
-            'End If
+            'End If[dbo].[AuditTrail]
 
             htParameters.Clear()
 

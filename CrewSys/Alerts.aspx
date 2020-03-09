@@ -79,8 +79,7 @@
                                                         <asp:BoundField DataField="CrewNo" HeaderText="Crew Number" SortExpression="CrewNo" />
                                                         <asp:TemplateField HeaderText="FullName" SortExpression="FullName">
                                                             <ItemTemplate>
-                                                                <asp:HyperLink ID="hlCrewNo" runat="server" CssClass="text-primary"
-                                                                    NavigateUrl='<%# SetNavigation(Eval("CrewNo").ToString())%>' Text='<%#Eval("FullName")%>' Target="_blank"></asp:HyperLink>
+                                                                <asp:HyperLink ID="hlCrewNo" runat="server" CssClass="text-primary" NavigateUrl='<%# SetNavigation(Eval("CrewNo").ToString())%>' Text='<%#Eval("FullName")%>' ></asp:HyperLink>
                                                                 <asp:HiddenField ID="ExpiryDate" runat="server" Value='<%#Bind("ExpiryDate")%>'></asp:HiddenField>
                                                             </ItemTemplate>
                                                             <ItemStyle HorizontalAlign="Left" />

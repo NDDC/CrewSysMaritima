@@ -116,16 +116,19 @@ Public Class Alerts
         htParameters.Add("VesselName", Code)
         htParameters.Add("Mode", 2)
         dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "ViewCrewRecord")
+        If dt.Rows.Count > 0 Then
+            hdnVesselName.Value = dt.Rows(0).Item(7).ToString()
+            hdnVesselCode.Value = dt.Rows(0).Item(6).ToString()
+            hdnCrewNo.Value = dt.Rows(0).Item(1).ToString()
+        End If
+        'For Each row As DataRow In dt.Rows
 
-        For Each row As DataRow In dt.Rows
 
-            hdnVesselName.Value = row("VesselName").ToString
-            hdnVesselCode.Value = row("VesselCode").ToString
-            hdnCrewNo.Value = row("CrewNo").ToString
 
-            '  ddlDepartment.SelectedValue = row("Department").ToString
 
-        Next
+        '  ddlDepartment.SelectedValue = row("Department").ToString
+
+        '  Next
 
         Return result
     End Function
@@ -162,16 +165,20 @@ Public Class Alerts
         htParameters.Add("VesselName", Code)
         htParameters.Add("Mode", 1)
         dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "ViewCrewRecord")
+        If dt.Rows.Count > 0 Then
+            hdnVesselName.Value = dt.Rows(0).Item(7).ToString()
+            hdnVesselCode.Value = dt.Rows(0).Item(6).ToString()
+            hdnCrewNo.Value = dt.Rows(0).Item(1).ToString()
+        End If
+        'For Each row As DataRow In dt.Rows
 
-        For Each row As DataRow In dt.Rows
+        '    hdnVesselName.Value = row("VesselName").ToString
+        '    hdnVesselCode.Value = row("VesselCode").ToString
+        '    hdnCrewNo.Value = row("CrewNo").ToString
 
-            hdnVesselName.Value = row("VesselName").ToString
-            hdnVesselCode.Value = row("VesselCode").ToString
-            hdnCrewNo.Value = row("CrewNo").ToString
+        '    '  ddlDepartment.SelectedValue = row("Department").ToString
 
-            '  ddlDepartment.SelectedValue = row("Department").ToString
-
-        Next
+        'Next
 
         Return result
     End Function
@@ -368,10 +375,12 @@ Public Class Alerts
     Protected Sub lbVesselName_Click(sender As Object, e As EventArgs)
         Dim rowIndex As Integer = Convert.ToInt32(TryCast(TryCast(sender, LinkButton).NamingContainer, GridViewRow).RowIndex)
         Dim row As GridViewRow = gvDocs.Rows(rowIndex)
-
+        Dim dt As New DataTable
         ViewRecordDocs(TryCast(row.FindControl("lbVesselName"), LinkButton).Text)
         lblVesselName.Text = TryCast(row.FindControl("lbVesselName"), LinkButton).Text
-        gvCrewDocEx.DataSource = MainClass.Library.Adapter.GetRecordSet(htParameters, "ViewCrewRecord")
+
+        dt = MainClass.Library.Adapter.GetRecordSet(htParameters, "ViewCrewRecord")
+        gvCrewDocEx.DataSource = dt
         gvCrewDocEx.DataBind()
 
         ViewState("Docs2") = gvCrewDocEx.DataSource

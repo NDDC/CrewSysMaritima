@@ -176,7 +176,7 @@
                                 <asp:TemplateField HeaderText="Name" SortExpression="FullName">
                                     <ItemTemplate>
                                         <asp:HyperLink ID="hlCrewNo" runat="server" CssClass="text-primary"
-                                            NavigateUrl='<%# SetNavigation(Eval("CrewNo").ToString())%>' Text='<%#Eval("FullName")%>' Target="_blank"></asp:HyperLink>
+                                            NavigateUrl='<%# SetNavigation(Eval("CrewNo").ToString())%>' Text='<%#Eval("FullName")%>' Target="_self"></asp:HyperLink>
                                     </ItemTemplate>
                                     <ItemStyle HorizontalAlign="Left" />
                                 </asp:TemplateField>
